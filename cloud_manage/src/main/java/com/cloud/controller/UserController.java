@@ -3,6 +3,7 @@ package com.cloud.controller;
 import com.cloud.pojo.entity.User;
 import com.cloud.service.UserService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -36,6 +37,7 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     @ApiOperation(value = "删除用户")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "int")
     public String delUser(@PathVariable("id") Integer id){
         return userService.delUser(id);
     }
