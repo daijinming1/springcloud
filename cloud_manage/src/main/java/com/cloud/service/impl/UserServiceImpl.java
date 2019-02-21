@@ -22,4 +22,23 @@ public class UserServiceImpl implements UserService{
     public List<User> list() {
         return userMapper.selectAll();
     }
+
+    @Override
+    public String addUser(User user) {
+        user.setId(0);
+        userMapper.insert(user);
+        return "添加成功";
+    }
+
+    @Override
+    public String delUser(Integer id) {
+        userMapper.deleteByPrimaryKey(id);
+        return "删除用户";
+    }
+
+    @Override
+    public String updateUser(User user) {
+        userMapper.updateByPrimaryKeySelective(user);
+        return "修改成功";
+    }
 }

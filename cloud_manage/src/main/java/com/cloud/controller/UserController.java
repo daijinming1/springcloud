@@ -5,9 +5,7 @@ import com.cloud.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +26,22 @@ public class UserController {
     @ApiOperation(value = "用户列表")
     public List<User> userList(){
         return userService.list();
+    }
+
+    @PostMapping("/")
+    @ApiOperation(value = "添加用户")
+    public String addUser(@RequestBody User user){
+        return userService.addUser(user);
+    }
+
+    @DeleteMapping("/{id}")
+    @ApiOperation(value = "删除用户")
+    public String delUser(@PathVariable("id") Integer id){
+        return userService.delUser(id);
+    }
+    @PutMapping("/")
+    @ApiOperation(value = "修改用户")
+    public String  updateUser(@RequestBody User user){
+        return userService.updateUser(user);
     }
 }
