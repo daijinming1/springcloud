@@ -2,5 +2,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://47.95.225.120:3306/cloud?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
-    username: cloud_db
-    password: cloud_db
+    username: ENC(24aWeOT2XzZ1XrQIDEONW0o5LlmXYD6A)
+    password: ENC(24aWeOT2XzZ1XrQIDEONW0o5LlmXYD6A)
+jasypt:
+  encryptor:
+    password: cloudmanage
