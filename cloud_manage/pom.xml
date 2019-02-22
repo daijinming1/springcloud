@@ -18,6 +18,11 @@
 
 
 	<dependencies>
+		<!-- springboot eureka组件-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 		<!--Spring Boot Web组件-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
